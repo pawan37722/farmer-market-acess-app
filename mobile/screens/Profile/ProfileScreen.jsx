@@ -21,6 +21,12 @@ export default function ProfileScreen({ navigation, onLogout }) {
       const { data } = await api.get('/auth/me');
       setUser(data.user);
     } catch (err) {
+      // 401 = token expired or invalid — auto logout
+      if (err.response?.status === 401) {
+        await AsyncStorage.multiRemove(['token', 'user']);
+        if (onLogout) onLogout();
+        return;
+      }
       console.error('Profile load error:', err.message);
     } finally {
       setLoading(false);
