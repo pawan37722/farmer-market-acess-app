@@ -1,0 +1,40 @@
+{
+  "expo": {
+    "name": "AgriApp",
+    "slug": "agri-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#1B6B35"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/icon.png",
+        "backgroundColor": "#1B6B35"
+      },
+      "permissions": [
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.CAMERA"
+      ]
+    },
+    "ios": {
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "Used to show crops and services near you.",
+        "NSPhotoLibraryUsageDescription": "Used to pick photos for your listings.",
+        "NSCameraUsageDescription": "Used to take photos of your crops and tools."
+      }
+    },
+    "plugins": [
+      "expo-location",
+      "expo-image-picker"
+    ]
+  }
+}
